@@ -7,7 +7,7 @@ class queries{
     }
     //POST - PENDIENTE
     async CreatePackage(pack){
-        let result = await db.query("INSERT INTO packages (addressStreet, addressPostalCode, clientName, weight, delivered) VALUES ($1, $2, $3, $4, $5)", [pack.addressStreetm, pack.addressPostalCode, pack.clientName, pack.weight, false]);
+        await db.query("INSERT INTO packages (addressStreet, addressPostalCode, clientName, weight, delivered) VALUES ($1, $2, $3, $4, $5)", [pack.addressStreetm, pack.addressPostalCode, pack.clientName, pack.weight, false]);
         return;
     }
     //UPDATE - PENDIENTE
