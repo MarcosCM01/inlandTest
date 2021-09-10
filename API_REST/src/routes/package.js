@@ -13,12 +13,13 @@ router.post('/createPackage', async(req, res)=>{
 });
 //PUT
 router.put('/updatePackage/:packId', async(req, res)=>{
-    let {packId} = req.params;
+    let packId = req.params;
+    //console.log(packId.packId);
     await new controller().UpdatePackage(packId, res);
 });
 //DELETE
 router.delete('/deletePackage/:packId', async(req, res)=>{
-    let {packId} = req.params;
+    let packId = req.params;
     await new controller().deletePackage(packId, res);
 });
 //export class

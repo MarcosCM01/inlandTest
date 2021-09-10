@@ -17,13 +17,13 @@ class controller{
         return;
     }
     //UPDATE - PENDIENTE
-    async UpdatePackage(packId, res){
+    async UpdatePackage(pack, res){
         //get the previous record
-        let previous = await db.query(`SELECT * FROM packages WHERE ID = ${packId}`);
+        let previous = await db.query(`SELECT * FROM packages WHERE ID = ${pack.packId}`);
         //PENDIENTE
         let checkedValue = !previous.rows[0].checked;
-
-        await db.query(`UPDATE packages SET checked = $1 WHERE id =${packId}`);
+        console.log("x");
+        await db.query(`UPDATE packages SET delivered = ${true} WHERE id =${pack.packId}`);
         res.status(200).json({
             status: 200,
             message: "Update correcta"
@@ -31,8 +31,8 @@ class controller{
         return;
     }
     //DELETE - PENDIENTE
-    async deletePackage(packId){
-        await db.query( `DELETE FROM packages WHERE ID=${packId}`);
+    async deletePackage(pack, res){
+        await db.query( `DELETE FROM packages WHERE ID=${pack.packId}`);
         res.status(200).json({
             status: 200,
             message: "Eliminacion correcta"
