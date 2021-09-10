@@ -1,0 +1,11 @@
+<p>create-package works!</p>
+<form (ngSubmit)="submit()" [formGroup]="form">
+    <div>
+        <input type="text" placeholder="addressStreet" formControlName = "addressStreet">
+        <input type="text" placeholder="addressPostalCode" formControlName = "addressPostalCode">
+        <input type="text" placeholder="clientName" formControlName = "clientName">
+        <input type="number" placeholder="weight" formControlName = "addressStreet">
+        <input type="number" placeholder="delivered" formControlName = "delivered">
+        <button type="submit">Create package</button>
+    </div>
+</form>
